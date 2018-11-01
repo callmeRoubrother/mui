@@ -17,36 +17,15 @@
         <p>{{ name }}</p>
         <p>{{ type }}</p>
         <button id="btn">返回</button>
+        <button id="shake">摇一摇</button>
+        <div class="shckeInfo"></div>
+        <button id="pic">拍照</button>
+        <button id="saoyisao">扫一扫</button>
         <img :src="imgs" alt="" />
     </div>
     
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-    	mui.init()
-    	var vm = new Vue({
-    		el: '#app',
-    		data: {
-    			name: '',
-    			type: '',
-    			imgs: ''
-    		}
-    	})
-    	
-    	mui.plusReady(function () {
-    		var name = plus.webview.currentWebview().Name;
-    		var type = plus.webview.currentWebview().Type;
-    		var imgs = plus.webview.currentWebview().Imgs;
-    		vm.name = name
-    		vm.type = type
-    		vm.imgs = imgs
-    		
-    		mui('.mui-content').on('tap', '#btn', function () {
-    			mui.back()
-    		})
-    		
-    	})
-    	
-    </script>
+    <script type="text/javascript" src="js/detail.js"></script>
 </body>
 </html>

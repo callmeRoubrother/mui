@@ -10,9 +10,11 @@
 	</head>
 
 	<body>
-		<div class="container" id="app">
-			<ul class="mui-table-view">
-			    <li class="mui-table-view-cell mui-media" v-for="(item, index) in list" :key='index' :name='item.realName' :type='item.type' :imgs='item.avatarUrl'>
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper container">
+		  <div class="mui-scroll" id="app">
+		    <!--数据列表-->
+		    <ul class="mui-table-view mui-table-view-chevron">
+		      <li class="mui-table-view-cell mui-media" v-for="(item, index) in list" :key='index' :name='item.realName' :type='item.type' :imgs='item.avatarUrl'>
 			        <a href="javascript:;">
 			            <img class="mui-media-object mui-pull-left" :src="item.avatarUrl">
 			            <div class="mui-media-body">
@@ -21,11 +23,9 @@
 			            </div>
 			        </a>
 			    </li>
-			</ul>
-			
-			
+		    </ul>
+		  </div>
 		</div>
-
 		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
