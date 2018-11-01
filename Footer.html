@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_879963_npyn1eam7o.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+		<header class="mui-bar mui-bar-nav header">
+	    <h1 class="mui-title header_h1">首页头部</h1>
+		</header>
+    <nav class="mui-bar mui-bar-tab footer">
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon mui-icon-home icon_footer"></span>
+	        <span class="mui-tab-label text_footer">首页</span>
+	    </a>
+	    <a class="mui-tab-item" id="kind">
+	        <span class="iconfont icon-pintuan icon_footer"></span>
+	        <span class="mui-tab-label text_footer">分类</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="iconfont icon-gouwuche icon_footer"></span>
+	        <span class="mui-tab-label text_footer">购物车</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="iconfont icon-gerenziliao icon_footer"></span>
+	        <span class="mui-tab-label text_footer">我的</span>
+	    </a>
+	</nav>
+    
+    
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init({
+    	subpages: [
+    	{
+    		url: 'index.html',
+    		id: 'index.html',
+    		styles: {
+    			top: '45px',
+    			bottom: '50px'
+    		}
+    	}
+    	]
+    })
+    
+    mui('.mui-bar-tab').on('tap', '#kind', function () {
+    	mui.openWindow({
+    		url: 'kind.html',
+    		id: 'kind',
+    		styles: {
+    			top: '0',
+    			bottom: '0',
+    			background: 'red'
+    		},
+    		extras: {
+    			
+    		},
+    		show: {
+				autoShow: true,
+				aniShow:'slide-in-right',
+      	duration:500
+			},
+			waiting: {
+				title: '拼命加载中....'
+			}
+    	})
+    })
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+	"Footer.html": {
+		"resources": [
+			"index.html"
+		],
+		"refer": [
+			"index.html",
+			"kind.html"
+		]
+	},
+	"index.html": {
+		"refer": [
+			"detail.html"
+		]
+	}
+}

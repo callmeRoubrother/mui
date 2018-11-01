@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+    
+    <!--<header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">标题</h1>
+    </header>-->
+    
+    <div class="mui-content" id="app">
+        <p>{{ name }}</p>
+        <p>{{ type }}</p>
+        <button id="btn">返回</button>
+        <img :src="imgs" alt="" />
+    </div>
+    
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	mui.init()
+    	var vm = new Vue({
+    		el: '#app',
+    		data: {
+    			name: '',
+    			type: '',
+    			imgs: ''
+    		}
+    	})
+    	
+    	mui.plusReady(function () {
+    		var name = plus.webview.currentWebview().Name;
+    		var type = plus.webview.currentWebview().Type;
+    		var imgs = plus.webview.currentWebview().Imgs;
+    		vm.name = name
+    		vm.type = type
+    		vm.imgs = imgs
+    		
+    		mui('.mui-content').on('tap', '#btn', function () {
+    			mui.back()
+    		})
+    		
+    	})
+    	
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+    <!-- 缩放式侧滑（类手机QQ） -->
+    <!-- 侧滑导航根容器 -->
+    <div class="mui-off-canvas-wrap mui-draggable mui-scalable" id="app">
+      <!-- 菜单容器 -->
+      <aside class="mui-off-canvas-left mui-transitioning" id="offCanvasSide">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell" v-for="(item, index) in list" :key='index'>
+                  <a class="mui-navigate-right">
+                      {{ item }}
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <!-- 主页面容器 -->
+      <div class="mui-inner-wrap mui-transitioning">
+        <!-- 主页面标题 -->
+        <header class="mui-bar mui-bar-nav">
+          <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
+          <h1 class="mui-title">分类</h1>
+        </header>
+        <div class="mui-content mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <div>
+            	<ul class="mui-table-view" v-if="newList.length > 0">
+            	    <li class="mui-table-view-cell mui-media" v-for='(item, index) in newList' :key='index'>
+            	        <a href="javascript:;">
+            	            <img class="mui-media-object mui-pull-right" :src="item.avatarUrl">
+            	            <div class="mui-media-body">
+							            	{{ item.userId }}{{ item.city }}
+							                <p class="mui-ellipsis">{{ item.realName }}</p>
+							            </div>
+            	        </a>
+            	    </li>
+            	</ul>
+            </div>
+          </div>
+        </div>  
+        <div class="mui-off-canvas-backdrop"></div>
+      </div>
+    </div>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/kind.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

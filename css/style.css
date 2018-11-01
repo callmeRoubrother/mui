@@ -1,0 +1,17 @@
+.mui-tab-label{
+	/*display: block;*/
+}
+.header{
+	background: #f66;
+}
+.header_h1{
+	color: white;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+	width: 100%;
+	height: 50px;
+}
